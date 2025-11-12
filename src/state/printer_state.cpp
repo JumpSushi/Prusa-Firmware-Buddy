@@ -22,6 +22,7 @@
 #include <option/xbuddy_extension_variant.h>
 #include <option/has_side_fsensor.h>
 #include <option/has_belt_tuning.h>
+#include <option/has_human_interactions.h>
 
 #if HAS_LOADCELL()
     #include <fsm/nozzle_cleaning_failed_phases.hpp>
@@ -601,7 +602,7 @@ ErrCode warning_type_to_error_code(WarningType wtype) {
         return ErrCode::CONNECT_NOT_DOWNLOADED;
     case WarningType::BuddyMCUMaxTemp:
         return ErrCode::CONNECT_BUDDY_MCU_MAX_TEMP;
-#if HAS_ILI9488_DISPLAY()
+#if HAS_ILI9488_DISPLAY() && HAS_HUMAN_INTERACTIONS()
     case WarningType::DisplayProblemDetected:
         return ErrCode::ERR_ELECTRO_DISPLAY_PROBLEM_DETECTED;
 #endif

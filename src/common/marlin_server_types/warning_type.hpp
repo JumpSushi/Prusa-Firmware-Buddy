@@ -8,6 +8,7 @@
 #include <option/xbuddy_extension_variant.h>
 #include <option/has_selftest.h>
 #include <option/has_precise_homing_corexy.h>
+#include <option/has_human_interactions.h>
 
 enum class WarningType : uint32_t {
 #if HAS_EMERGENCY_STOP()
@@ -93,7 +94,7 @@ enum class WarningType : uint32_t {
     HomingCalibrationFromMenuNeeded,
 #endif
     AccelerometerCommunicationFailed,
-#if HAS_ILI9488_DISPLAY()
+#if HAS_ILI9488_DISPLAY() && HAS_HUMAN_INTERACTIONS()
     DisplayProblemDetected,
 #endif
     _cnt,
