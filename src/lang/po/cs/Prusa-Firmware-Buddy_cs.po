@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: info@prusa3d.com\n"
-"POT-Creation-Date: 2025-10-08 08:41+0000\n"
+"POT-Creation-Date: 2025-11-18 11:35+0000\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -550,7 +550,7 @@ msgstr ""
 msgid "Are you sure you want to skip the door sensor calibration for now?"
 msgstr "Jste si jistí, že chcete nyní přeskočit kalibraci dveřního senzoru?"
 
-#: src/gui/MItem_hardware.cpp:156
+#: src/gui/MItem_hardware.cpp:168
 msgid "Ask"
 msgstr "Ptát se"
 
@@ -587,7 +587,8 @@ msgstr ""
 "Upozornění: ujistěte se, že je akcelerometr správně připojen. Postupujte dle "
 "návodu níže:"
 
-#: src/gui/MItem_hardware.cpp:155 src/gui/numeric_input_config_common.cpp:44
+#: src/gui/MItem_hardware.cpp:150 src/gui/MItem_hardware.cpp:167
+#: src/gui/numeric_input_config_common.cpp:44
 msgid "Auto"
 msgstr "Auto"
 
@@ -757,7 +758,7 @@ msgstr ""
 "Před pokračováním se ujistěte, že je je PLA filament zaveden do extruderu."
 
 #. Now show always, bed heater selftest can fail if there is no sheet on the bed
-#: src/gui/screen_menu_selftest_snake.cpp:414
+#: src/gui/screen_menu_selftest_snake.cpp:418
 msgid ""
 "Before you continue, make sure the print sheet is installed on the heatbed."
 msgstr "Před pokračováním se ujistěte, že je na podložce tiskový plát."
@@ -1065,7 +1066,7 @@ msgstr "Nelze provést - filament je zaveden. Nejprve jej vyjměte."
 msgid "Carry Out the Changes"
 msgstr "Provést změny"
 
-#: src/gui/MItem_hardware.cpp:118
+#: src/gui/MItem_hardware.cpp:122
 msgid ""
 "Caution! Disabling the door sensor may lead to injury or printer damage. "
 "Proceeding means you accept full responsibility. We are not liable for any "
@@ -1141,6 +1142,10 @@ msgstr "Teplota komory"
 #: tmp_error_headers/error_list_xl.hpp:225
 msgid "Chamber Temperature Is Critical"
 msgstr "Kritická teplota v komoře"
+
+#: src/gui/MItem_hardware.cpp:157
+msgid "Chamber Vent Control"
+msgstr "Ovládání ventilace komory"
 
 #: tmp_error_headers/error_list_coreone.hpp:884
 msgid ""
@@ -1224,13 +1229,9 @@ msgstr "Výměna filamentu"
 msgid "Changing tool"
 msgstr "Výměna nástroje"
 
-#: src/gui/MItem_hardware.cpp:145
-msgid "Check Ventilation Grilles"
-msgstr "Zkontrolujte ventilační mřížky"
-
 #: src/gui/screen/selftest/screen_manual_belt_tuning.cpp:22
 msgid "Check X-axis gantry squareness"
-msgstr "Kontrola pravúhlosti osy X"
+msgstr "Kontrola pravoúhlosti osy X"
 
 #: tmp_error_headers/error_list_xl.hpp:9
 msgid "Check all tools if they are properly parked or picked."
@@ -1394,6 +1395,10 @@ msgid ""
 "Close the idler door and secure it with the swivel. The calibration is done!"
 msgstr "Zavřete dvířka idleru a zajistěte je sponou. Kalibrace je hotová!"
 
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:43
+msgid "Closing chamber vents"
+msgstr "Zavření krytu ventilační mřížky"
+
 #: src/gui/dialogs/DialogConnectReg.cpp:117
 #, c-format
 msgid "Code: %s"
@@ -1481,7 +1486,7 @@ msgstr "Spotřeba materiálu"
 msgid "Continue"
 msgstr "Pokračovat"
 
-#: src/gui/screen_menu_selftest_snake.cpp:209
+#: src/gui/screen_menu_selftest_snake.cpp:213
 msgid "Continue running Calibrations & Tests?"
 msgstr "Pokračovat v kalibracích a testech?"
 
@@ -2297,7 +2302,7 @@ msgstr ""
 msgid "FINISH"
 msgstr "DOKONČIT"
 
-#: src/gui/screen_menu_selftest_snake.cpp:206
+#: src/gui/screen_menu_selftest_snake.cpp:210
 msgid ""
 "FINISH remaining calibrations without proceeding to other tests, or perform "
 "ALL Calibrations and Tests?\n"
@@ -3337,7 +3342,7 @@ msgstr "HAL detekoval nedefinovanou chybu I2C při posílání dat přes I2C."
 msgid "HARD RESET"
 msgstr "RESET"
 
-#: src/gui/screen_menu_hardware.hpp:115
+#: src/gui/screen_menu_hardware.hpp:113
 #: src/gui/screen_menu_hardware_tune.hpp:24
 msgid "HARDWARE"
 msgstr "HARDWARE"
@@ -3470,7 +3475,7 @@ msgstr "HW test pulley"
 msgid "HW test selector"
 msgstr "HW test selektoru"
 
-#: src/gui/screen_menu_selftest_snake.cpp:430
+#: src/guiapi/src/window_msgbox_happy_printing.cpp:13
 msgid "Happy printing!"
 msgstr "Tisku zdar!"
 
@@ -3663,7 +3668,7 @@ msgstr "Zahřívání..."
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/gui/screen_splash.cpp:144
+#: src/gui/screen_splash.cpp:147
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MINI printer.\n"
@@ -3675,7 +3680,7 @@ msgstr ""
 "Nyní vás provedu\n"
 "úvodním nastavením."
 
-#: src/gui/screen_splash.cpp:141
+#: src/gui/screen_splash.cpp:144
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MK3.5 printer.\n"
@@ -3687,7 +3692,7 @@ msgstr ""
 "Nyní vás provedu skrz\n"
 "úvodní nastavení."
 
-#: src/gui/screen_splash.cpp:134
+#: src/gui/screen_splash.cpp:137
 msgid ""
 "Hi, this is your\n"
 "Original Prusa XL printer.\n"
@@ -3699,7 +3704,7 @@ msgstr ""
 "Nyní vás provedu skrz\n"
 "úvodní nastavení."
 
-#: src/gui/screen_splash.cpp:147
+#: src/gui/screen_splash.cpp:150
 msgid ""
 "Hi, this is your\n"
 "Original Prusa iX printer.\n"
@@ -3712,7 +3717,7 @@ msgstr ""
 "úvodní nastavení."
 
 #. The MK4 is left out intentionally - it could be MK4, MK4S or MK3.9, we don't know yet
-#: src/gui/screen_splash.cpp:138
+#: src/gui/screen_splash.cpp:141
 msgid ""
 "Hi, this is your\n"
 "Original Prusa printer.\n"
@@ -3724,7 +3729,7 @@ msgstr ""
 "Nyní vás provedu\n"
 "skrz úvodní nastavení."
 
-#: src/gui/screen_splash.cpp:150
+#: src/gui/screen_splash.cpp:153
 msgid ""
 "Hi, this is your\n"
 "Prusa CORE One printer.\n"
@@ -3752,7 +3757,7 @@ msgstr "Domů"
 msgid "Homing"
 msgstr "Homing"
 
-#: src/gui/MItem_hardware.cpp:160
+#: src/gui/MItem_hardware.cpp:172
 msgid "Homing Calibration"
 msgstr "Kalibrace homingu"
 
@@ -4816,6 +4821,10 @@ msgstr "Ujistěte se, že je filament vložen skrz fil. senzor."
 msgid "Manage Filaments"
 msgstr "Správa filamentů"
 
+#: src/gui/MItem_hardware.cpp:151
+msgid "Manual"
+msgstr "Manuální"
+
 #: src/gui/MItem_tools.hpp:639
 msgid "Manual Belt Tuning"
 msgstr "Ruční ladění řemenů"
@@ -5109,7 +5118,7 @@ msgstr "Nastavení sítě"
 msgid "Network Status"
 msgstr "Stav sítě"
 
-#: src/gui/MItem_hardware.cpp:154 src/gui/MItem_tools.cpp:887
+#: src/gui/MItem_hardware.cpp:166 src/gui/MItem_tools.cpp:887
 msgid "Never"
 msgstr "Nikdy"
 
@@ -5209,7 +5218,7 @@ msgstr "Jmenovitá teplota komory"
 
 #: src/common/footer_def.cpp:9
 #: src/common/feature/chamber_filtration/chamber_filtration.cpp:42
-#: src/gui/MItem_hardware.cpp:18 src/gui/numeric_input_config_common.cpp:64
+#: src/gui/MItem_hardware.cpp:22 src/gui/numeric_input_config_common.cpp:64
 msgid "None"
 msgstr "Žádný"
 
@@ -5411,7 +5420,7 @@ msgid "Object"
 msgstr "Objekt"
 
 #. / Display string of the nullopt value
-#: src/gui/screen_menu_connect.cpp:46
+#: src/gui/MItem_hardware.cpp:149 src/gui/screen_menu_connect.cpp:46
 #: src/guiapi/include/numeric_input_config.hpp:31
 msgid "Off"
 msgstr "Vyp."
@@ -5476,6 +5485,10 @@ msgid ""
 msgstr ""
 "Otevřete dveře a utáhněte napínací šroub o půlotáčku. Pak zavřete dveře a "
 "stav potvrďte."
+
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:42
+msgid "Opening chamber vents"
+msgstr "Otevření krytu ventilační mřížky"
 
 #: tmp_error_headers/error_list_mk35.hpp:142
 #: tmp_error_headers/error_list_coreone.hpp:240
@@ -6027,7 +6040,7 @@ msgstr "Zvolte POKRAČOVAT a zaveďte filament do MMU."
 msgid "Press CONTINUE and push filament into the extruder."
 msgstr "Zvolte POKRAČOVAT a zasuňte filament do extruderu."
 
-#: src/gui/screen_menu_selftest_snake.cpp:122
+#: src/gui/screen_menu_selftest_snake.cpp:126
 msgid "Previous Calibrations & Tests are not all done. Continue anyway?"
 msgstr "Předchozí kalibrace a testy nejsou zcela dokončené. Pokračovat?"
 
@@ -6132,7 +6145,7 @@ msgstr "Nastavení tiskárny"
 msgid "Printer State"
 msgstr "Stav tiskárny"
 
-#: src/gui/MItem_hardware.cpp:66 src/gui/MItem_hardware.hpp:61
+#: src/gui/MItem_hardware.cpp:70 src/gui/MItem_hardware.hpp:61
 msgid "Printer Type"
 msgstr "Typ tiskárny"
 
@@ -6178,7 +6191,7 @@ msgstr "Model tiskárny neodpovídá"
 msgid "Printer tools"
 msgstr "Nástroje tiskárny"
 
-#: src/gui/screen_splash.cpp:193
+#: src/gui/screen_splash.cpp:206
 #, c-format
 msgid ""
 "Printer type changed from %s to %s.\n"
@@ -6650,7 +6663,7 @@ msgstr ""
 "Každý šroub pootočte o 1,5 otáčky proti směru hodinových ručiček. Měly by "
 "být zarovnány s hranou krytu. Odemkněte a otevřete idler."
 
-#: src/gui/screen_menu_selftest_snake.cpp:408
+#: src/gui/screen_menu_selftest_snake.cpp:412
 msgid "Run selftests and calibrations now?"
 msgstr "Spustit testy a kalibrace?"
 
@@ -7066,7 +7079,7 @@ msgstr "Stop"
 msgid "Stopping MMU"
 msgstr "Zastavuji MMU"
 
-#: src/gui/MItem_hardware.cpp:20
+#: src/gui/MItem_hardware.cpp:24
 msgid "Strict"
 msgstr "Přísný"
 
@@ -8057,7 +8070,7 @@ msgstr "Dotyk"
 msgid "Touch Sig Workaround"
 msgstr "Touch Sig Workaround"
 
-#: src/gui/screen_splash.cpp:161
+#: src/gui/screen_splash.cpp:164
 msgid "Touch driver failed to initialize, touch functionality disabled"
 msgstr "Chyba ovladače dotykové vrstvy, dotykové ovládání vypnuto."
 
@@ -8557,7 +8570,7 @@ msgstr "Čekám na potvrzení. Až bude tiskárna připravena, vyberte Pokračov
 msgid "Waiting for user input"
 msgstr "Čeká se na uživatele"
 
-#: src/gui/MItem_hardware.cpp:19
+#: src/gui/MItem_hardware.cpp:23
 msgid "Warn"
 msgstr "Varovat"
 

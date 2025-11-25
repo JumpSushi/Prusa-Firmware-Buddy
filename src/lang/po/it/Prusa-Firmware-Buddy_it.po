@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: info@prusa3d.com\n"
-"POT-Creation-Date: 2025-10-08 08:41+0000\n"
+"POT-Creation-Date: 2025-11-18 11:35+0000\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -553,7 +553,7 @@ msgstr ""
 "Sei sicuro di voler saltare la calibrazione del sensore dello sportello per "
 "ora?"
 
-#: src/gui/MItem_hardware.cpp:156
+#: src/gui/MItem_hardware.cpp:168
 msgid "Ask"
 msgstr "Chiedi"
 
@@ -590,7 +590,8 @@ msgstr ""
 "Attenzione: Assicurati che l'accelerometro sia collegato correttamente. "
 "Segui la guida passo-passo nel link sottostante:"
 
-#: src/gui/MItem_hardware.cpp:155 src/gui/numeric_input_config_common.cpp:44
+#: src/gui/MItem_hardware.cpp:150 src/gui/MItem_hardware.cpp:167
+#: src/gui/numeric_input_config_common.cpp:44
 msgid "Auto"
 msgstr "Auto"
 
@@ -765,7 +766,7 @@ msgstr ""
 "direttamente nell'estrusore."
 
 #. Now show always, bed heater selftest can fail if there is no sheet on the bed
-#: src/gui/screen_menu_selftest_snake.cpp:414
+#: src/gui/screen_menu_selftest_snake.cpp:418
 msgid ""
 "Before you continue, make sure the print sheet is installed on the heatbed."
 msgstr ""
@@ -1084,7 +1085,7 @@ msgstr ""
 msgid "Carry Out the Changes"
 msgstr "Applica le modifiche"
 
-#: src/gui/MItem_hardware.cpp:118
+#: src/gui/MItem_hardware.cpp:122
 msgid ""
 "Caution! Disabling the door sensor may lead to injury or printer damage. "
 "Proceeding means you accept full responsibility. We are not liable for any "
@@ -1109,7 +1110,7 @@ msgstr "Errore Ventola di Raffreddamento Camera"
 
 #: src/gui/MItem_tools.hpp:579
 msgid "Chamber Dimming"
-msgstr "Dimmerazione della camera"
+msgstr "Dimmerazione Camera"
 
 #: src/gui/menu_item/specific/menu_items_xbuddy_extension.cpp:82
 msgid "Chamber Fan 1"
@@ -1139,7 +1140,7 @@ msgstr "Errore Ventola di Filtrazione Camera"
 
 #: src/gui/MItem_tools.hpp:551
 msgid "Chamber Lights"
-msgstr "Luci della camera"
+msgstr "Luci Camera"
 
 #: src/gui/MItem_tools.hpp:565
 msgid "Chamber Lights Dimmed"
@@ -1160,6 +1161,10 @@ msgstr "Temperatura della camera"
 #: tmp_error_headers/error_list_xl.hpp:225
 msgid "Chamber Temperature Is Critical"
 msgstr "La temperatura della camera è critica"
+
+#: src/gui/MItem_hardware.cpp:157
+msgid "Chamber Vent Control"
+msgstr "Controllo ventilazione camera"
 
 #: tmp_error_headers/error_list_coreone.hpp:884
 msgid ""
@@ -1199,7 +1204,7 @@ msgstr ""
 
 #: src/gui/MItem_filament.hpp:28
 msgid "Change Filament"
-msgstr "Cambio filamento"
+msgstr "Cambio Filamento"
 
 #: src/gui/MItem_filament.hpp:41
 msgid "Change Filament in All Tools"
@@ -1247,10 +1252,6 @@ msgstr "Cambio filamento"
 #: src/gui/dialogs/DialogLoadUnload.cpp:41
 msgid "Changing tool"
 msgstr "Cambio strumento"
-
-#: src/gui/MItem_hardware.cpp:145
-msgid "Check Ventilation Grilles"
-msgstr "Controllare la griglia di ventilazione"
 
 #: src/gui/screen/selftest/screen_manual_belt_tuning.cpp:22
 msgid "Check X-axis gantry squareness"
@@ -1427,6 +1428,10 @@ msgstr ""
 "Chiudi lo sportello idler e bloccalo con con la clip di chiusura. La "
 "calibrazione è completa!"
 
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:43
+msgid "Closing chamber vents"
+msgstr "Chiusura delle prese d'aria della camera"
+
 #: src/gui/dialogs/DialogConnectReg.cpp:117
 #, c-format
 msgid "Code: %s"
@@ -1515,7 +1520,7 @@ msgstr "Materiale consumato"
 msgid "Continue"
 msgstr "Continua"
 
-#: src/gui/screen_menu_selftest_snake.cpp:209
+#: src/gui/screen_menu_selftest_snake.cpp:213
 msgid "Continue running Calibrations & Tests?"
 msgstr "Continuare con le Calibrazioni e test?"
 
@@ -2341,7 +2346,7 @@ msgstr ""
 msgid "FINISH"
 msgstr "COMPLETA"
 
-#: src/gui/screen_menu_selftest_snake.cpp:206
+#: src/gui/screen_menu_selftest_snake.cpp:210
 msgid ""
 "FINISH remaining calibrations without proceeding to other tests, or perform "
 "ALL Calibrations and Tests?\n"
@@ -2948,7 +2953,7 @@ msgstr "Aggiornamento del firmware richiesto"
 
 #: src/gui/MItem_tools.hpp:228 include/common/hw_check.hpp:34
 msgid "Firmware Version"
-msgstr "Versione firmware"
+msgstr "Versione Firmware"
 
 #: src/gui/version_info_ST7789V.cpp:38
 msgid "Firmware Version\n"
@@ -3130,7 +3135,7 @@ msgstr "Calibrazione primo layer"
 #. / Keep most things, reset only possible trouble makers (experimental settings, tweaks, ...)
 #: src/gui/screen/screen_factory_reset.cpp:28
 msgid "Fix Common Misconfigurations"
-msgstr "Correggi le configurazioni errate più comuni"
+msgstr "Correzione delle configurazioni errate più comuni"
 
 #: src/gui/MItem_network.cpp:65
 msgid "Flash ESP"
@@ -3412,7 +3417,7 @@ msgstr ""
 msgid "HARD RESET"
 msgstr "HARD RESET"
 
-#: src/gui/screen_menu_hardware.hpp:115
+#: src/gui/screen_menu_hardware.hpp:113
 #: src/gui/screen_menu_hardware_tune.hpp:24
 msgid "HARDWARE"
 msgstr "HARDWARE"
@@ -3545,7 +3550,7 @@ msgstr "HW test puleggia"
 msgid "HW test selector"
 msgstr "Test HW selettore"
 
-#: src/gui/screen_menu_selftest_snake.cpp:430
+#: src/guiapi/src/window_msgbox_happy_printing.cpp:13
 msgid "Happy printing!"
 msgstr "Buona stampa!"
 
@@ -3739,7 +3744,7 @@ msgstr "Riscaldamento..."
 msgid "Help"
 msgstr "Aiuto"
 
-#: src/gui/screen_splash.cpp:144
+#: src/gui/screen_splash.cpp:147
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MINI printer.\n"
@@ -3751,7 +3756,7 @@ msgstr ""
 "Ti guiderò nel processo\n"
 "di configurazione."
 
-#: src/gui/screen_splash.cpp:141
+#: src/gui/screen_splash.cpp:144
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MK3.5 printer.\n"
@@ -3763,7 +3768,7 @@ msgstr ""
 "Ti guiderò nel processo\n"
 "di configurazione."
 
-#: src/gui/screen_splash.cpp:134
+#: src/gui/screen_splash.cpp:137
 msgid ""
 "Hi, this is your\n"
 "Original Prusa XL printer.\n"
@@ -3775,7 +3780,7 @@ msgstr ""
 "Ti guiderò nel processo\n"
 "di configurazione."
 
-#: src/gui/screen_splash.cpp:147
+#: src/gui/screen_splash.cpp:150
 msgid ""
 "Hi, this is your\n"
 "Original Prusa iX printer.\n"
@@ -3788,7 +3793,7 @@ msgstr ""
 "processo di configurazione."
 
 #. The MK4 is left out intentionally - it could be MK4, MK4S or MK3.9, we don't know yet
-#: src/gui/screen_splash.cpp:138
+#: src/gui/screen_splash.cpp:141
 msgid ""
 "Hi, this is your\n"
 "Original Prusa printer.\n"
@@ -3800,7 +3805,7 @@ msgstr ""
 "Vorrei guidarti attraverso \n"
 "il processo di configurazione."
 
-#: src/gui/screen_splash.cpp:150
+#: src/gui/screen_splash.cpp:153
 msgid ""
 "Hi, this is your\n"
 "Prusa CORE One printer.\n"
@@ -3828,7 +3833,7 @@ msgstr "Home"
 msgid "Homing"
 msgstr "Homing"
 
-#: src/gui/MItem_hardware.cpp:160
+#: src/gui/MItem_hardware.cpp:172
 msgid "Homing Calibration"
 msgstr "Calibrazione Homing"
 
@@ -4908,7 +4913,11 @@ msgstr "Accertati che il filamento attraversi il sensore."
 
 #: src/gui/MItem_menus.hpp:49
 msgid "Manage Filaments"
-msgstr "Gestione filamenti"
+msgstr "Gestione Filamenti"
+
+#: src/gui/MItem_hardware.cpp:151
+msgid "Manual"
+msgstr "Manuale"
 
 #: src/gui/MItem_tools.hpp:639
 msgid "Manual Belt Tuning"
@@ -5205,7 +5214,7 @@ msgstr "Impostazioni di Rete"
 msgid "Network Status"
 msgstr "Stato Rete"
 
-#: src/gui/MItem_hardware.cpp:154 src/gui/MItem_tools.cpp:887
+#: src/gui/MItem_hardware.cpp:166 src/gui/MItem_tools.cpp:887
 msgid "Never"
 msgstr "Mai"
 
@@ -5307,7 +5316,7 @@ msgstr "Temperatura Nominale Camera"
 
 #: src/common/footer_def.cpp:9
 #: src/common/feature/chamber_filtration/chamber_filtration.cpp:42
-#: src/gui/MItem_hardware.cpp:18 src/gui/numeric_input_config_common.cpp:64
+#: src/gui/MItem_hardware.cpp:22 src/gui/numeric_input_config_common.cpp:64
 msgid "None"
 msgstr "Nessuno"
 
@@ -5511,7 +5520,7 @@ msgid "Object"
 msgstr "Oggetto"
 
 #. / Display string of the nullopt value
-#: src/gui/screen_menu_connect.cpp:46
+#: src/gui/MItem_hardware.cpp:149 src/gui/screen_menu_connect.cpp:46
 #: src/guiapi/include/numeric_input_config.hpp:31
 msgid "Off"
 msgstr "Off"
@@ -5577,6 +5586,10 @@ msgid ""
 msgstr ""
 "Apri lo sportello e stringi la vite di tensionamento di circa mezzo giro. "
 "Poi chiudi lo sportello e conferma."
+
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:42
+msgid "Opening chamber vents"
+msgstr "Apertura delle prese d'aria della camera"
 
 #: tmp_error_headers/error_list_mk35.hpp:142
 #: tmp_error_headers/error_list_coreone.hpp:240
@@ -6141,7 +6154,7 @@ msgstr "Premi CONTINUA e spingi il filamento nella MMU."
 msgid "Press CONTINUE and push filament into the extruder."
 msgstr "Premi CONTINUA e spingi il filamento nell'estrusore."
 
-#: src/gui/screen_menu_selftest_snake.cpp:122
+#: src/gui/screen_menu_selftest_snake.cpp:126
 msgid "Previous Calibrations & Tests are not all done. Continue anyway?"
 msgstr ""
 "Le calibrazioni e i test precedenti non sono stati completati. Continuare "
@@ -6248,7 +6261,7 @@ msgstr "Setup Stampante"
 msgid "Printer State"
 msgstr "Stato Stampante"
 
-#: src/gui/MItem_hardware.cpp:66 src/gui/MItem_hardware.hpp:61
+#: src/gui/MItem_hardware.cpp:70 src/gui/MItem_hardware.hpp:61
 msgid "Printer Type"
 msgstr "Tipo Stampante"
 
@@ -6297,7 +6310,7 @@ msgstr "Il modello di stampante non corrisponde"
 msgid "Printer tools"
 msgstr "Strumenti stampante"
 
-#: src/gui/screen_splash.cpp:193
+#: src/gui/screen_splash.cpp:206
 #, c-format
 msgid ""
 "Printer type changed from %s to %s.\n"
@@ -6418,7 +6431,7 @@ msgstr ""
 
 #: src/gui/MItem_filament.hpp:51
 msgid "Purge Filament"
-msgstr "Spurgo filamento"
+msgstr "Spurgo Filamento"
 
 #: src/gui/dialogs/DialogLoadUnload.cpp:56
 msgid "Purging"
@@ -6640,7 +6653,7 @@ msgstr "Rinomina"
 
 #: src/gui/MItem_menus.hpp:55
 msgid "Reorder Filaments"
-msgstr "Riordina filamenti"
+msgstr "Riordina Filamenti"
 
 #: tmp_error_headers/error_list_mk35.hpp:527
 #: tmp_error_headers/error_list_coreone.hpp:723
@@ -6776,7 +6789,7 @@ msgstr ""
 "Ruota ogni vite in senso antiorario di 1,5 giri. Le teste delle viti devono "
 "essere a filo del coperchio. Sblocca e apri l'idler."
 
-#: src/gui/screen_menu_selftest_snake.cpp:408
+#: src/gui/screen_menu_selftest_snake.cpp:412
 msgid "Run selftests and calibrations now?"
 msgstr "Eseguire autotest e calibrazioni ora?"
 
@@ -7195,7 +7208,7 @@ msgstr "Stop"
 msgid "Stopping MMU"
 msgstr "Arresto della MMU"
 
-#: src/gui/MItem_hardware.cpp:20
+#: src/gui/MItem_hardware.cpp:24
 msgid "Strict"
 msgstr "Esatto"
 
@@ -8205,7 +8218,7 @@ msgstr "Tocco"
 msgid "Touch Sig Workaround"
 msgstr "Touch Sig Workaround"
 
-#: src/gui/screen_splash.cpp:161
+#: src/gui/screen_splash.cpp:164
 msgid "Touch driver failed to initialize, touch functionality disabled"
 msgstr "Driver Touch non inizializzato, funzione touch disattivata"
 
@@ -8713,7 +8726,7 @@ msgstr ""
 msgid "Waiting for user input"
 msgstr "Attesa azione utente"
 
-#: src/gui/MItem_hardware.cpp:19
+#: src/gui/MItem_hardware.cpp:23
 msgid "Warn"
 msgstr "Avvisa"
 

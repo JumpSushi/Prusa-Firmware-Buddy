@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Prusa-Firmware-Buddy 4.1\n"
 "Report-Msgid-Bugs-To: info@prusa3d.com\n"
-"POT-Creation-Date: 2025-10-08 08:41+0000\n"
+"POT-Creation-Date: 2025-11-18 11:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -508,7 +508,7 @@ msgstr ""
 msgid "Are you sure you want to skip the door sensor calibration for now?"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:156
+#: src/gui/MItem_hardware.cpp:168
 msgid "Ask"
 msgstr ""
 
@@ -539,7 +539,8 @@ msgid ""
 "by-step guide in the link below:"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:155 src/gui/numeric_input_config_common.cpp:44
+#: src/gui/MItem_hardware.cpp:150 src/gui/MItem_hardware.cpp:167
+#: src/gui/numeric_input_config_common.cpp:44
 msgid "Auto"
 msgstr ""
 
@@ -695,7 +696,7 @@ msgid ""
 msgstr ""
 
 #. Now show always, bed heater selftest can fail if there is no sheet on the bed
-#: src/gui/screen_menu_selftest_snake.cpp:414
+#: src/gui/screen_menu_selftest_snake.cpp:418
 msgid ""
 "Before you continue, make sure the print sheet is installed on the heatbed."
 msgstr ""
@@ -994,7 +995,7 @@ msgstr ""
 msgid "Carry Out the Changes"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:118
+#: src/gui/MItem_hardware.cpp:122
 msgid ""
 "Caution! Disabling the door sensor may lead to injury or printer damage. "
 "Proceeding means you accept full responsibility. We are not liable for any "
@@ -1068,6 +1069,10 @@ msgstr ""
 msgid "Chamber Temperature Is Critical"
 msgstr ""
 
+#: src/gui/MItem_hardware.cpp:157
+msgid "Chamber Vent Control"
+msgstr ""
+
 #: tmp_error_headers/error_list_coreone.hpp:884
 msgid ""
 "Chamber cooling fan is not spinning. Check it for possible debris, then "
@@ -1139,10 +1144,6 @@ msgstr ""
 
 #: src/gui/dialogs/DialogLoadUnload.cpp:41
 msgid "Changing tool"
-msgstr ""
-
-#: src/gui/MItem_hardware.cpp:145
-msgid "Check Ventilation Grilles"
 msgstr ""
 
 #: src/gui/screen/selftest/screen_manual_belt_tuning.cpp:22
@@ -1304,6 +1305,10 @@ msgid ""
 "Close the idler door and secure it with the swivel. The calibration is done!"
 msgstr ""
 
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:43
+msgid "Closing chamber vents"
+msgstr ""
+
 #: src/gui/dialogs/DialogConnectReg.cpp:117
 #, c-format
 msgid "Code: %s"
@@ -1385,7 +1390,7 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: src/gui/screen_menu_selftest_snake.cpp:209
+#: src/gui/screen_menu_selftest_snake.cpp:213
 msgid "Continue running Calibrations & Tests?"
 msgstr ""
 
@@ -2159,7 +2164,7 @@ msgstr ""
 msgid "FINISH"
 msgstr ""
 
-#: src/gui/screen_menu_selftest_snake.cpp:206
+#: src/gui/screen_menu_selftest_snake.cpp:210
 msgid ""
 "FINISH remaining calibrations without proceeding to other tests, or perform "
 "ALL Calibrations and Tests?\n"
@@ -3108,7 +3113,7 @@ msgstr ""
 msgid "HARD RESET"
 msgstr ""
 
-#: src/gui/screen_menu_hardware.hpp:115
+#: src/gui/screen_menu_hardware.hpp:113
 #: src/gui/screen_menu_hardware_tune.hpp:24
 msgid "HARDWARE"
 msgstr ""
@@ -3241,7 +3246,7 @@ msgstr ""
 msgid "HW test selector"
 msgstr ""
 
-#: src/gui/screen_menu_selftest_snake.cpp:430
+#: src/guiapi/src/window_msgbox_happy_printing.cpp:13
 msgid "Happy printing!"
 msgstr ""
 
@@ -3417,7 +3422,7 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
-#: src/gui/screen_splash.cpp:144
+#: src/gui/screen_splash.cpp:147
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MINI printer.\n"
@@ -3425,7 +3430,7 @@ msgid ""
 "through the setup process."
 msgstr ""
 
-#: src/gui/screen_splash.cpp:141
+#: src/gui/screen_splash.cpp:144
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MK3.5 printer.\n"
@@ -3433,7 +3438,7 @@ msgid ""
 "through the setup process."
 msgstr ""
 
-#: src/gui/screen_splash.cpp:134
+#: src/gui/screen_splash.cpp:137
 msgid ""
 "Hi, this is your\n"
 "Original Prusa XL printer.\n"
@@ -3441,7 +3446,7 @@ msgid ""
 "through the setup process."
 msgstr ""
 
-#: src/gui/screen_splash.cpp:147
+#: src/gui/screen_splash.cpp:150
 msgid ""
 "Hi, this is your\n"
 "Original Prusa iX printer.\n"
@@ -3450,7 +3455,7 @@ msgid ""
 msgstr ""
 
 #. The MK4 is left out intentionally - it could be MK4, MK4S or MK3.9, we don't know yet
-#: src/gui/screen_splash.cpp:138
+#: src/gui/screen_splash.cpp:141
 msgid ""
 "Hi, this is your\n"
 "Original Prusa printer.\n"
@@ -3458,7 +3463,7 @@ msgid ""
 "through the setup process."
 msgstr ""
 
-#: src/gui/screen_splash.cpp:150
+#: src/gui/screen_splash.cpp:153
 msgid ""
 "Hi, this is your\n"
 "Prusa CORE One printer.\n"
@@ -3482,7 +3487,7 @@ msgstr ""
 msgid "Homing"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:160
+#: src/gui/MItem_hardware.cpp:172
 msgid "Homing Calibration"
 msgstr ""
 
@@ -4488,6 +4493,10 @@ msgstr ""
 msgid "Manage Filaments"
 msgstr ""
 
+#: src/gui/MItem_hardware.cpp:151
+msgid "Manual"
+msgstr ""
+
 #: src/gui/MItem_tools.hpp:639
 msgid "Manual Belt Tuning"
 msgstr ""
@@ -4773,7 +4782,7 @@ msgstr ""
 msgid "Network Status"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:154 src/gui/MItem_tools.cpp:887
+#: src/gui/MItem_hardware.cpp:166 src/gui/MItem_tools.cpp:887
 msgid "Never"
 msgstr ""
 
@@ -4866,7 +4875,7 @@ msgstr ""
 
 #: src/common/footer_def.cpp:9
 #: src/common/feature/chamber_filtration/chamber_filtration.cpp:42
-#: src/gui/MItem_hardware.cpp:18 src/gui/numeric_input_config_common.cpp:64
+#: src/gui/MItem_hardware.cpp:22 src/gui/numeric_input_config_common.cpp:64
 msgid "None"
 msgstr ""
 
@@ -5056,7 +5065,7 @@ msgid "Object"
 msgstr ""
 
 #. / Display string of the nullopt value
-#: src/gui/screen_menu_connect.cpp:46
+#: src/gui/MItem_hardware.cpp:149 src/gui/screen_menu_connect.cpp:46
 #: src/guiapi/include/numeric_input_config.hpp:31
 msgid "Off"
 msgstr ""
@@ -5112,6 +5121,10 @@ msgstr ""
 msgid ""
 "Open the door and tighten the tensioning screw by about a half turn. Then "
 "close the door and confirm."
+msgstr ""
+
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:42
+msgid "Opening chamber vents"
 msgstr ""
 
 #: tmp_error_headers/error_list_mk35.hpp:142
@@ -5649,7 +5662,7 @@ msgstr ""
 msgid "Press CONTINUE and push filament into the extruder."
 msgstr ""
 
-#: src/gui/screen_menu_selftest_snake.cpp:122
+#: src/gui/screen_menu_selftest_snake.cpp:126
 msgid "Previous Calibrations & Tests are not all done. Continue anyway?"
 msgstr ""
 
@@ -5752,7 +5765,7 @@ msgstr ""
 msgid "Printer State"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:66 src/gui/MItem_hardware.hpp:61
+#: src/gui/MItem_hardware.cpp:70 src/gui/MItem_hardware.hpp:61
 msgid "Printer Type"
 msgstr ""
 
@@ -5794,7 +5807,7 @@ msgstr ""
 msgid "Printer tools"
 msgstr ""
 
-#: src/gui/screen_splash.cpp:193
+#: src/gui/screen_splash.cpp:206
 #, c-format
 msgid ""
 "Printer type changed from %s to %s.\n"
@@ -6244,7 +6257,7 @@ msgid ""
 "flush with the cover. Unlock and open the idler."
 msgstr ""
 
-#: src/gui/screen_menu_selftest_snake.cpp:408
+#: src/gui/screen_menu_selftest_snake.cpp:412
 msgid "Run selftests and calibrations now?"
 msgstr ""
 
@@ -6635,7 +6648,7 @@ msgstr ""
 msgid "Stopping MMU"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:20
+#: src/gui/MItem_hardware.cpp:24
 msgid "Strict"
 msgstr ""
 
@@ -7512,7 +7525,7 @@ msgstr ""
 msgid "Touch Sig Workaround"
 msgstr ""
 
-#: src/gui/screen_splash.cpp:161
+#: src/gui/screen_splash.cpp:164
 msgid "Touch driver failed to initialize, touch functionality disabled"
 msgstr ""
 
@@ -7981,7 +7994,7 @@ msgstr ""
 msgid "Waiting for user input"
 msgstr ""
 
-#: src/gui/MItem_hardware.cpp:19
+#: src/gui/MItem_hardware.cpp:23
 msgid "Warn"
 msgstr ""
 

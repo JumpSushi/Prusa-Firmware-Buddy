@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: info@prusa3d.com\n"
-"POT-Creation-Date: 2025-10-08 08:41+0000\n"
+"POT-Creation-Date: 2025-11-18 11:35+0000\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -398,7 +398,7 @@ msgstr "Anulowano."
 
 #: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:21
 msgid "Absorbing heat"
-msgstr "Pochłanianie ciepła"
+msgstr "Absorpcja ciepła"
 
 #: src/gui/frame_calibration_common.cpp:16
 msgid ""
@@ -549,7 +549,7 @@ msgstr ""
 msgid "Are you sure you want to skip the door sensor calibration for now?"
 msgstr "Czy na pewno chcesz pominąć kalibrację czujnika drzwi?"
 
-#: src/gui/MItem_hardware.cpp:156
+#: src/gui/MItem_hardware.cpp:168
 msgid "Ask"
 msgstr "Pytaj"
 
@@ -586,7 +586,8 @@ msgstr ""
 "Uwaga: upewnij się, że akcelerometr jest prawidłowo podłączony. Postępuj "
 "zgodnie z instrukcją:"
 
-#: src/gui/MItem_hardware.cpp:155 src/gui/numeric_input_config_common.cpp:44
+#: src/gui/MItem_hardware.cpp:150 src/gui/MItem_hardware.cpp:167
+#: src/gui/numeric_input_config_common.cpp:44
 msgid "Auto"
 msgstr "Auto"
 
@@ -758,7 +759,7 @@ msgstr ""
 "bezpośrednio do ekstrudera."
 
 #. Now show always, bed heater selftest can fail if there is no sheet on the bed
-#: src/gui/screen_menu_selftest_snake.cpp:414
+#: src/gui/screen_menu_selftest_snake.cpp:418
 msgid ""
 "Before you continue, make sure the print sheet is installed on the heatbed."
 msgstr ""
@@ -1074,7 +1075,7 @@ msgstr ""
 msgid "Carry Out the Changes"
 msgstr "Dokonaj zmian"
 
-#: src/gui/MItem_hardware.cpp:118
+#: src/gui/MItem_hardware.cpp:122
 msgid ""
 "Caution! Disabling the door sensor may lead to injury or printer damage. "
 "Proceeding means you accept full responsibility. We are not liable for any "
@@ -1133,7 +1134,7 @@ msgstr "Oświetlenie komory"
 
 #: src/gui/MItem_tools.hpp:565
 msgid "Chamber Lights Dimmed"
-msgstr "Przyciemniono oświetlenie komory"
+msgstr "Poziom przyciemn. oświetlenia"
 
 #: tmp_error_headers/error_list_coreone.hpp:204
 #: tmp_error_headers/error_list_xl.hpp:218
@@ -1150,6 +1151,10 @@ msgstr "Temperatura komory"
 #: tmp_error_headers/error_list_xl.hpp:225
 msgid "Chamber Temperature Is Critical"
 msgstr "Krytyczna temperatura komory"
+
+#: src/gui/MItem_hardware.cpp:157
+msgid "Chamber Vent Control"
+msgstr "Sterowanie wentylacją komory"
 
 #: tmp_error_headers/error_list_coreone.hpp:884
 msgid ""
@@ -1235,10 +1240,6 @@ msgstr "Zmiana filamentu"
 #: src/gui/dialogs/DialogLoadUnload.cpp:41
 msgid "Changing tool"
 msgstr "Zmiana narzędzia"
-
-#: src/gui/MItem_hardware.cpp:145
-msgid "Check Ventilation Grilles"
-msgstr "Sprawdź kratkę wentylacyjną"
 
 #: src/gui/screen/selftest/screen_manual_belt_tuning.cpp:22
 msgid "Check X-axis gantry squareness"
@@ -1408,6 +1409,10 @@ msgstr ""
 "Zamknij drzwiczki docisku i zabezpiecz je za pomocą blokady. Kalibracja "
 "została zakończona!"
 
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:43
+msgid "Closing chamber vents"
+msgstr "Zamykanie wentylacji komory"
+
 #: src/gui/dialogs/DialogConnectReg.cpp:117
 #, c-format
 msgid "Code: %s"
@@ -1496,7 +1501,7 @@ msgstr "Użyty materiał"
 msgid "Continue"
 msgstr "Kontynuuj"
 
-#: src/gui/screen_menu_selftest_snake.cpp:209
+#: src/gui/screen_menu_selftest_snake.cpp:213
 msgid "Continue running Calibrations & Tests?"
 msgstr "Kontynuować kalibrację i testy?"
 
@@ -1514,7 +1519,7 @@ msgstr "Chłodzenie. Nie dotykaj dyszy!"
 
 #: src/gui/wizard/screen_fan_selftest.cpp:64
 msgid "Cooling fans"
-msgstr "Wentylatory chłodzące"
+msgstr "Wentylatory komory"
 
 #: src/gui/screen_cold_pull.cpp:281
 msgid "Cooling the nozzle"
@@ -2321,7 +2326,7 @@ msgstr ""
 msgid "FINISH"
 msgstr "DOKOŃCZ"
 
-#: src/gui/screen_menu_selftest_snake.cpp:206
+#: src/gui/screen_menu_selftest_snake.cpp:210
 msgid ""
 "FINISH remaining calibrations without proceeding to other tests, or perform "
 "ALL Calibrations and Tests?\n"
@@ -3383,7 +3388,7 @@ msgstr ""
 msgid "HARD RESET"
 msgstr "HARD RESET"
 
-#: src/gui/screen_menu_hardware.hpp:115
+#: src/gui/screen_menu_hardware.hpp:113
 #: src/gui/screen_menu_hardware_tune.hpp:24
 msgid "HARDWARE"
 msgstr "HARDWARE"
@@ -3516,7 +3521,7 @@ msgstr "Test HW radełko"
 msgid "HW test selector"
 msgstr "Test HW wybierak"
 
-#: src/gui/screen_menu_selftest_snake.cpp:430
+#: src/guiapi/src/window_msgbox_happy_printing.cpp:13
 msgid "Happy printing!"
 msgstr "Udanego drukowania!"
 
@@ -3709,7 +3714,7 @@ msgstr "Nagrzewanie..."
 msgid "Help"
 msgstr "Pomoc"
 
-#: src/gui/screen_splash.cpp:144
+#: src/gui/screen_splash.cpp:147
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MINI printer.\n"
@@ -3721,7 +3726,7 @@ msgstr ""
 "Chcę przeprowadzić Cię przez \n"
 "proces konfiguracji."
 
-#: src/gui/screen_splash.cpp:141
+#: src/gui/screen_splash.cpp:144
 msgid ""
 "Hi, this is your\n"
 "Original Prusa MK3.5 printer.\n"
@@ -3733,7 +3738,7 @@ msgstr ""
 "Chcę przeprowadzić Cię przez \n"
 "proces konfiguracji."
 
-#: src/gui/screen_splash.cpp:134
+#: src/gui/screen_splash.cpp:137
 msgid ""
 "Hi, this is your\n"
 "Original Prusa XL printer.\n"
@@ -3745,7 +3750,7 @@ msgstr ""
 "Chcę przeprowadzić Cię przez \n"
 "proces konfiguracji."
 
-#: src/gui/screen_splash.cpp:147
+#: src/gui/screen_splash.cpp:150
 msgid ""
 "Hi, this is your\n"
 "Original Prusa iX printer.\n"
@@ -3758,7 +3763,7 @@ msgstr ""
 "proces konfiguracji."
 
 #. The MK4 is left out intentionally - it could be MK4, MK4S or MK3.9, we don't know yet
-#: src/gui/screen_splash.cpp:138
+#: src/gui/screen_splash.cpp:141
 msgid ""
 "Hi, this is your\n"
 "Original Prusa printer.\n"
@@ -3770,7 +3775,7 @@ msgstr ""
 "Przeprowadzę Cię przez \n"
 "proces konfiguracji."
 
-#: src/gui/screen_splash.cpp:150
+#: src/gui/screen_splash.cpp:153
 msgid ""
 "Hi, this is your\n"
 "Prusa CORE One printer.\n"
@@ -3798,7 +3803,7 @@ msgstr "Ekran główny"
 msgid "Homing"
 msgstr "Bazowanie"
 
-#: src/gui/MItem_hardware.cpp:160
+#: src/gui/MItem_hardware.cpp:172
 msgid "Homing Calibration"
 msgstr "Kalibracja bazowania"
 
@@ -3841,7 +3846,7 @@ msgstr "Rodzaj hotendu"
 #: src/gui/wizard/selftest_result_fans.cpp:14
 #: src/gui/wizard/screen_fan_selftest.cpp:55
 msgid "Hotend fan"
-msgstr "Went. hotendu"
+msgstr "Wentylator hotendu"
 
 #. for iX with turbine, heatbreak fan eval always succeeds
 #: src/gui/wizard/screen_fan_selftest.cpp:53
@@ -4214,7 +4219,7 @@ msgstr "Zachowaj"
 #. / Reset everything, keep just HW configuration
 #: src/gui/screen/screen_factory_reset.cpp:31
 msgid "Keep HW Config"
-msgstr "Zachowaj konfig. HWS"
+msgstr "Zachowaj konfig. HW"
 
 #: src/gui/screen_menu_lang_and_time.hpp:27
 msgid "LANGUAGE & TIME"
@@ -4873,6 +4878,10 @@ msgstr "Upewnij się, że filament przechodzi przez czujnik filamentu."
 msgid "Manage Filaments"
 msgstr "Zarządzaj filamentami"
 
+#: src/gui/MItem_hardware.cpp:151
+msgid "Manual"
+msgstr "Ręczne"
+
 #: src/gui/MItem_tools.hpp:639
 msgid "Manual Belt Tuning"
 msgstr "Ręczne strojenie pasków"
@@ -5166,7 +5175,7 @@ msgstr "Ustawienia sieci"
 msgid "Network Status"
 msgstr "Stan sieci"
 
-#: src/gui/MItem_hardware.cpp:154 src/gui/MItem_tools.cpp:887
+#: src/gui/MItem_hardware.cpp:166 src/gui/MItem_tools.cpp:887
 msgid "Never"
 msgstr "Nigdy"
 
@@ -5267,7 +5276,7 @@ msgstr "Nominalna temperatura komory"
 
 #: src/common/footer_def.cpp:9
 #: src/common/feature/chamber_filtration/chamber_filtration.cpp:42
-#: src/gui/MItem_hardware.cpp:18 src/gui/numeric_input_config_common.cpp:64
+#: src/gui/MItem_hardware.cpp:22 src/gui/numeric_input_config_common.cpp:64
 msgid "None"
 msgstr "Brak"
 
@@ -5469,7 +5478,7 @@ msgid "Object"
 msgstr "Obiekt"
 
 #. / Display string of the nullopt value
-#: src/gui/screen_menu_connect.cpp:46
+#: src/gui/MItem_hardware.cpp:149 src/gui/screen_menu_connect.cpp:46
 #: src/guiapi/include/numeric_input_config.hpp:31
 msgid "Off"
 msgstr "Wył. "
@@ -5534,6 +5543,10 @@ msgid ""
 msgstr ""
 "Otwórz drzwi i dokręć śrubę napinającą o około pół obrotu. Następnie zamknij "
 "drzwi i potwierdź."
+
+#: src/common/feature/print_status_message/print_status_message_formatter_buddy.cpp:42
+msgid "Opening chamber vents"
+msgstr "Otwieranie wentylacji komory"
 
 #: tmp_error_headers/error_list_mk35.hpp:142
 #: tmp_error_headers/error_list_coreone.hpp:240
@@ -6087,7 +6100,7 @@ msgstr "Naciśnij KONTYNUUJ i wsuń filament do MMU."
 msgid "Press CONTINUE and push filament into the extruder."
 msgstr "Naciśnij KONTYNUUJ i wsuń filament do ekstrudera."
 
-#: src/gui/screen_menu_selftest_snake.cpp:122
+#: src/gui/screen_menu_selftest_snake.cpp:126
 msgid "Previous Calibrations & Tests are not all done. Continue anyway?"
 msgstr "Poprzednie kalibracje i testy nie zostały zakończone. Kontynuować?"
 
@@ -6192,7 +6205,7 @@ msgstr "Konfiguracja drukarki"
 msgid "Printer State"
 msgstr "Stan drukarki"
 
-#: src/gui/MItem_hardware.cpp:66 src/gui/MItem_hardware.hpp:61
+#: src/gui/MItem_hardware.cpp:70 src/gui/MItem_hardware.hpp:61
 msgid "Printer Type"
 msgstr "Rodzaj drukarki"
 
@@ -6239,7 +6252,7 @@ msgstr "Rozbieżność modelu drukarki"
 msgid "Printer tools"
 msgstr "Narzędzia"
 
-#: src/gui/screen_splash.cpp:193
+#: src/gui/screen_splash.cpp:206
 #, c-format
 msgid ""
 "Printer type changed from %s to %s.\n"
@@ -6717,7 +6730,7 @@ msgstr ""
 "o 1,5 obrotu. Łby śrub powinny znajdować się na równi z pokrywą. Odblokuj i "
 "otwórz docisk."
 
-#: src/gui/screen_menu_selftest_snake.cpp:408
+#: src/gui/screen_menu_selftest_snake.cpp:412
 msgid "Run selftests and calibrations now?"
 msgstr "Uruchomić Selftest i kalibracje?"
 
@@ -7133,7 +7146,7 @@ msgstr "Stop"
 msgid "Stopping MMU"
 msgstr "Zatrzymywanie MMU"
 
-#: src/gui/MItem_hardware.cpp:20
+#: src/gui/MItem_hardware.cpp:24
 msgid "Strict"
 msgstr "Restrykcyjne"
 
@@ -8133,7 +8146,7 @@ msgstr "Dotyk"
 msgid "Touch Sig Workaround"
 msgstr "Touch Sig Workaround"
 
-#: src/gui/screen_splash.cpp:161
+#: src/gui/screen_splash.cpp:164
 msgid "Touch driver failed to initialize, touch functionality disabled"
 msgstr "Błąd sterownika dotyku, funkcje dotykowe wyłączone"
 
@@ -8635,7 +8648,7 @@ msgstr ""
 msgid "Waiting for user input"
 msgstr "Czekam na użytkownika"
 
-#: src/gui/MItem_hardware.cpp:19
+#: src/gui/MItem_hardware.cpp:23
 msgid "Warn"
 msgstr "Ostrzegaj"
 
