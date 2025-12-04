@@ -103,9 +103,9 @@ dependencies = {
         'url': 'https://prusa-buddy-firmware-dependencies.s3.eu-central-1.amazonaws.com/firmware-coreonel_ac_controller-0.0.5-F4C48F40-8C54-4FE0-92B2-4575B5979118.zip',
     },
     'firmware-mmu': {
-        'version': '3.0.3',
+        'version': '3.0.4',
         'files': [
-            'https://github.com/prusa3d/Prusa-Firmware-MMU/releases/download/v3.0.3/MMU2S_MMU3_FW3.0.3+896.hex'
+            'https://github.com/DRracer/Prusa-Firmware-MMU/releases/download/v3.0.4-beta/MMU3_FW3.0.4+936.hex'
         ],
     },
     'mini404': {
