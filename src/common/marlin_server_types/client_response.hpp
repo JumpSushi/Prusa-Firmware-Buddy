@@ -179,6 +179,7 @@ enum class PhasesLoadUnload : PhaseUnderlyingType {
 #if HAS_MMU2()
     // MMU-specific dialogs
     LoadFilamentIntoMMU,
+    MMUDummyStartNoAttention,
     // internal states of the MMU
     MMU_EngagingIdler,
     MMU_DisengagingIdler,
@@ -648,6 +649,7 @@ inline constexpr EnumArray<PhasesLoadUnload, PhaseResponses, CountPhases<PhasesL
 #endif
 #if HAS_MMU2()
         { PhasesLoadUnload::LoadFilamentIntoMMU, { Response::Continue } },
+        { PhasesLoadUnload::MMUDummyStartNoAttention, {} },
 
         { PhasesLoadUnload::MMU_EngagingIdler, {} },
         { PhasesLoadUnload::MMU_DisengagingIdler, {} },
