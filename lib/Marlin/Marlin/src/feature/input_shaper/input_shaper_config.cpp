@@ -136,10 +136,11 @@ static void set_logical_axis_config_internal(const AxisEnum axis, std::optional<
     assert(PreciseStepping::move_segment_queue_size() == 0);
 
 #ifdef COREXY
+    const AxisEnum second_axis = (axis == X_AXIS) ? Y_AXIS : X_AXIS;
     if (axis_config) {
         if (axis == X_AXIS || axis == Y_AXIS) {
-            std::optional<AxisConfig> second_axis_config = current_config().axis[(axis == X_AXIS) ? Y_AXIS : X_AXIS];
-            get_input_shaper(InputShaper::logical_axis_pulses[X_AXIS], *axis_config, InputShaper::logical_axis_pulses[Y_AXIS], second_axis_config);
+            std::optional<AxisConfig> second_axis_config = current_config().axis[second_axis];
+            get_input_shaper(InputShaper::logical_axis_pulses[axis], *axis_config, InputShaper::logical_axis_pulses[second_axis], second_axis_config);
             PreciseStepping::physical_axis_step_generator_types |= INPUT_SHAPER_STEP_GENERATOR_X;
             PreciseStepping::physical_axis_step_generator_types |= INPUT_SHAPER_STEP_GENERATOR_Y;
         } else {
@@ -148,7 +149,10 @@ static void set_logical_axis_config_internal(const AxisEnum axis, std::optional<
         }
     } else {
         if (axis == X_AXIS || axis == Y_AXIS) {
-            if (std::optional<AxisConfig> second_axis_config = current_config().axis[(axis == X_AXIS) ? Y_AXIS : X_AXIS]; !second_axis_config) {
+            if (std::optional<AxisConfig> second_axis_config = current_config().axis[second_axis]; second_axis_config) {
+                // The input shaper is also enabled on the second logical axis, so we disable it just on the first axis.
+                get_input_shaper(InputShaper::logical_axis_pulses[second_axis], *second_axis_config, InputShaper::logical_axis_pulses[axis], axis_config);
+            } else {
                 PreciseStepping::physical_axis_step_generator_types &= ~(INPUT_SHAPER_STEP_GENERATOR_X);
                 PreciseStepping::physical_axis_step_generator_types &= ~(INPUT_SHAPER_STEP_GENERATOR_Y);
             }
