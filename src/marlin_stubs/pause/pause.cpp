@@ -67,25 +67,6 @@ LOG_COMPONENT_REF(MarlinServer);
     #define NOZZLE_UNPARK_XY_FEEDRATE NOZZLE_PARK_XY_FEEDRATE
 #endif
 
-#if HAS_NOZZLE_CLEANER()
-static void nozzle_cleaner_load_or_runout_load_gcode(Pause::LoadType load_type) {
-    switch (load_type) {
-    case Pause::LoadType::load:
-    case Pause::LoadType::autoload:
-    case Pause::LoadType::load_to_gears:
-    case Pause::LoadType::load_purge:
-        nozzle_cleaner::load_load_gcode();
-        break;
-    case Pause::LoadType::filament_change:
-    case Pause::LoadType::filament_stuck:
-        nozzle_cleaner::load_runout_gcode();
-        break;
-    default:
-        break;
-    }
-}
-#endif
-
 // private:
 // check unsupported features
 // filament sensor is no longer part of marlin thus it must be disabled
@@ -925,7 +906,7 @@ void Pause::load_prime_process([[maybe_unused]] Response response) {
     }
 
 #if HAS_NOZZLE_CLEANER()
-    nozzle_cleaner_load_or_runout_load_gcode(load_type);
+    nozzle_cleaner::load_clean_gcode();
     set(LoadState::load_nozzle_clean);
     return;
 #endif
@@ -939,6 +920,16 @@ void Pause::load_nozzle_clean_process([[maybe_unused]] Response response) {
 
     if (nozzle_cleaner::execute()) {
         set(LoadState::_finished);
+
+        switch (load_type) {
+        case Pause::LoadType::load:
+        case Pause::LoadType::autoload:
+        case Pause::LoadType::load_to_gears:
+        case Pause::LoadType::load_purge:
+            mapi::park(mapi::ZAction::no_move, mapi::ParkingPosition::from_xyz_pos({ { XYZ_NOZZLE_PARK_POINT } }));
+        default:
+            break;
+        }
     }
 }
 #endif
@@ -1033,7 +1024,7 @@ void Pause::auto_retract_process([[maybe_unused]] Response response) {
     auto_retract().maybe_retract_from_nozzle();
 
     #if HAS_NOZZLE_CLEANER()
-    nozzle_cleaner_load_or_runout_load_gcode(load_type);
+    nozzle_cleaner::load_clean_gcode();
     set(LoadState::load_nozzle_clean);
     return;
     #endif
