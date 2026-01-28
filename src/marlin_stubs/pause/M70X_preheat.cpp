@@ -141,7 +141,7 @@ std::pair<std::optional<PreheatStatus::Result>, FilamentType> filament_gcodes::p
     }
 }
 
-void filament_gcodes::M1700_no_parser(const M1700Args &args) {
+void filament_gcodes::M1700_preheat(const M1700Args &args) {
     InProgress progress;
     const FSMResponseVariant response_variant = preheatTempUnKnown(PreheatData::make(args.mode, args.target_extruder, args.preheat), true);
 
