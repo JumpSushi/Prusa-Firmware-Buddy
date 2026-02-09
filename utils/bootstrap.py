@@ -99,8 +99,8 @@ dependencies = {
         'url': 'https://prusa-buddy-firmware-dependencies.s3.eu-central-1.amazonaws.com/bootloader-ix-2.6.0-36BB9EB6-4DE5-4007-B635-EDD577CBB3BA.zip',
     },
     'firmware-coreonel_ac_controller': {
-        'version': '0.0.6',
-        'url': 'https://prusa-buddy-firmware-dependencies.s3.eu-central-1.amazonaws.com/firmware-coreonel_ac_controller-0.0.6-3FD2B67B-3FA0-4BBB-BB24-A61E49BCAD39.zip',
+        'version': '0.0.7',
+        'url': 'https://prusa-buddy-firmware-dependencies.s3.eu-central-1.amazonaws.com/firmware-coreonel_ac_controller-0.0.7-E644E124-17B6-4EFF-893D-9E38CD931A58.zip',
     },
     'firmware-mmu': {
         'version': '3.0.4',
