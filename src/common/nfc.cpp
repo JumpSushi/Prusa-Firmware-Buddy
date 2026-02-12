@@ -305,6 +305,7 @@ bool has_nfc_probably() {
     switch (PrinterModelInfo::current().model) {
     case PrinterModel::coreone:
     case PrinterModel::coreonel:
+    case PrinterModel::coreone_oak:
     case PrinterModel::mk3_5s:
     case PrinterModel::mk3_9s:
     case PrinterModel::mk4s:
