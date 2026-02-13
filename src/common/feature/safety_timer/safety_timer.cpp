@@ -8,6 +8,12 @@
 #include <fsm/safety_timer_phases.hpp>
 
 namespace {
+void clear_temp_to_display() {
+    for (uint8_t hotend = 0; hotend < HOTENDS; hotend++) {
+        marlin_server::set_temp_to_display(0, hotend);
+    }
+}
+
 void handle_resuming_abort() {
     // Abort right away if not printing
     if (marlin_server::is_printing()) {
@@ -182,6 +188,7 @@ void SafetyTimer::trigger() {
                 Temperature::disable_hotend();
                 marlin_server::set_warning(WarningType::NozzleTimeout);
             }
+            clear_temp_to_display();
         }
         return;
     }
@@ -207,6 +214,7 @@ void SafetyTimer::trigger() {
 #endif
 
     Temperature::disable_hotend();
+    clear_temp_to_display();
     marlin_server::set_warning(WarningType::NozzleTimeout);
 }
 
