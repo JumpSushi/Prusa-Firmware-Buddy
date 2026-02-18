@@ -486,12 +486,6 @@ void CSelftest::phaseSelftestStart() {
             marlin_server::set_temp_to_display(0, e);
         }
     }
-
-    m_result = config_store().selftest_result.get(); // read previous result
-    if (m_Mask & stmZcalib) {
-        m_result.zalign = TestResult_Unknown;
-    }
-    config_store().selftest_result.set(m_result); // reset status for all selftest parts in eeprom
 }
 
 void CSelftest::restoreAfterSelftest() {
