@@ -43,6 +43,11 @@ void selftest::calib_Z([[maybe_unused]] bool move_down_after) {
         return; // This can happen only during print, homing recovery should follow
     }
 
+    // mark test as failed (so it will be failed after reset - disconnected cables can cause rsod)
+    auto result = config_store().selftest_result.get();
+    result.zalign = TestResult_Failed;
+    config_store().selftest_result.set(result);
+
     // Move the nozzle up and away from the bed
     do_homing_move(Z_AXIS, Z_CALIB_EXTRA_HIGHT, HOMING_FEEDRATE_INVERTED_Z, false, false);
     current_position.z = 0;
@@ -117,6 +122,11 @@ static void safe_move_down() {
 }
 
 void selftest::calib_Z(bool move_down_after) {
+    // mark test as failed (so it will be failed after reset)
+    auto result = config_store().selftest_result.get();
+    result.zalign = TestResult_Failed;
+    config_store().selftest_result.set(result);
+
     // backup original acceleration/feedrates and reset defaults for calibration
     static constexpr float def_feedrate[] = DEFAULT_MAX_FEEDRATE;
     static constexpr float def_accel[] = DEFAULT_MAX_ACCELERATION;
