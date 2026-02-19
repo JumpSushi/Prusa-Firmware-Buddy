@@ -50,9 +50,6 @@ struct MoveHints {
 /** Holds flags related to configuration and segment generation
  */
 struct PrepareMoveHints {
-  /// Apply modifiers (MBL, skew correction, ...)
-  bool apply_modifiers : 1 = true;
-
   /// Apply feedrate scaling
   bool scale_feedrate : 1 = true;
 
