@@ -1181,6 +1181,7 @@ void Planner::synchronize() {
 bool Planner::_buffer_msteps(const xyze_long_t &target, const xyze_pos_t &target_float
   , feedRate_t fr_mm_s, const uint8_t extruder, const PlannerHints &hints
 ) {
+  assert(fr_mm_s > 0);
 
   // Wait for the next available block
   uint8_t next_buffer_head;
@@ -1229,6 +1230,8 @@ bool Planner::_populate_block(block_t * const block,
   const abce_long_t &target, const xyze_pos_t &target_float
   , feedRate_t fr_mm_s, const uint8_t extruder, const PlannerHints &hints
 ) {
+  assert(fr_mm_s > 0);
+  
   const int32_t da = target.a - position.a,
                 db = target.b - position.b,
                 dc = target.c - position.c;
@@ -2380,6 +2383,7 @@ bool Planner::buffer_segment(const abce_pos_t &abce
   , const uint8_t extruder/*=active_extruder*/
   , const PlannerHints &hints/*=PlannerHints()*/
 ) {
+  assert(fr_mm_s > 0);
 
 #if defined(Z_CEILING_CLEARANCE) != HAS_CEILING_CLEARANCE()
   #error Z_CEILING_CLEARANCE must be defined only if HAS_CEILING_CLEARANCE()
