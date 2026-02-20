@@ -1473,10 +1473,10 @@ float homeaxis_single_run(const AxisEnum axis, const int axis_home_dir, const fe
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("Move Away:");
 
     // Move away from the endstop by the axis HOME_BUMP_MM
-    if(do_homing_move(axis, -bump, real_fr_mm_s)) {
-      // Hitting an endstop during move away should never happen, fail in this case.
-      return NAN;
-    }
+    // We CANNOT use a stallguarded move here - it somehow manages to screw up results of the homing sensitivity calibration on cartesian printers
+    // BFW-8396
+    current_position[axis] -= bump;
+    planner.buffer_segment(current_position, real_fr_mm_s);
 
     // Slow move towards endstop until triggered
     if (DEBUGGING(LEVELING)) DEBUG_ECHOLNPGM("Home 2 Slow:");
