@@ -1031,6 +1031,8 @@ void loop() {
         handle_nfc();
     }
 #endif
+
+    print_utils_loop();
 }
 
 static bool idle_running = false;
@@ -3598,8 +3600,6 @@ void onIdle() {
     // update sensor values for metrics and sensor screens
     sensor_data().update();
     buddy::metrics::record();
-
-    print_utils_loop();
 }
 
 void onPrintTimerStarted() {
