@@ -249,17 +249,21 @@ namespace state {
         }
 #endif
 
-        if (axes_need_homing(X_AXIS | Y_AXIS)) {
-            const G28Flags flags {
-                .only_if_needed = true,
-                .z_raise = 3,
-                .precise = false,
-            };
-            GcodeSuite::G28_no_parser(true, true, false, flags); // XY only
 #if HAS_TOOLCHANGER()
+        if (active_extruder == PrusaToolChanger::MARLIN_NO_TOOL_PICKED) {
             tool_change(/*tool_index=*/0, tool_return_t::no_return, tool_change_lift_t::no_lift, /*z_down=*/false);
-#endif
         }
+#endif
+
+        // This home is done if we haven't done a toolchange before
+        // Without toolchange, we only need imprecise homing so that we can move the head in the right place for measurements
+        const G28Flags flags {
+            .only_if_needed = true,
+            .z_raise = 3,
+            .precise = false,
+        };
+        GcodeSuite::G28_no_parser(true, true, false, flags); // XY only
+
         Planner::synchronize();
 
 #if PRINTER_IS_PRUSA_iX()
