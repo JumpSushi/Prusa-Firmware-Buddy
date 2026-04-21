@@ -24,7 +24,7 @@ SpoolJoin spool_join;
 LOG_COMPONENT_REF(Marlin);
 
 SpoolJoin &SpoolJoin::operator=(const SpoolJoin &other) {
-    std::scoped_lock lock(mutex, other.mutex);
+    std::unique_lock lock(mutex, other.mutex);
     this->num_joins = other.num_joins;
     for (size_t i = 0; i < joins.size(); i++) {
         this->joins[i] = other.joins[i];

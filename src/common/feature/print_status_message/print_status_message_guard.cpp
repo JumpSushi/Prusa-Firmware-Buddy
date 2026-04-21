@@ -7,7 +7,7 @@ PrintStatusMessageGuard::PrintStatusMessageGuard(bool clear_temporary_msg) {
     assert(xTaskGetCurrentTaskHandle() == defaultTaskHandle);
 
     auto &psm = print_status_message();
-    std::scoped_lock guard(psm.mutex_);
+    std::unique_lock guard(psm.mutex_);
 
     parent_guard_ = psm.active_guard_;
     record_.id = psm.id_counter_++;
@@ -21,7 +21,7 @@ PrintStatusMessageGuard::PrintStatusMessageGuard(bool clear_temporary_msg) {
 
 PrintStatusMessageGuard::~PrintStatusMessageGuard() {
     auto &psm = print_status_message();
-    std::scoped_lock guard(psm.mutex_);
+    std::unique_lock guard(psm.mutex_);
 
     assert(psm.active_guard_ == this);
     psm.active_guard_ = parent_guard_;
@@ -29,7 +29,7 @@ PrintStatusMessageGuard::~PrintStatusMessageGuard() {
 
 void PrintStatusMessageGuard::update(const Message &msg) {
     auto &psm = print_status_message();
-    std::scoped_lock guard(psm.mutex_);
+    std::unique_lock guard(psm.mutex_);
 
     record_.message = msg;
     psm.add_history_item_nolock(record_);

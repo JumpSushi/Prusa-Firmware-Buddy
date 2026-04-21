@@ -24,7 +24,7 @@ ToolMapper::ToolMapper() {
 }
 
 ToolMapper &ToolMapper::operator=(const ToolMapper &other) {
-    std::scoped_lock lock(mutex, other.mutex);
+    std::unique_lock lock(mutex, other.mutex);
     this->enabled = other.enabled;
     for (size_t i = 0; i < std::size(gcode_to_physical); i++) {
         this->gcode_to_physical[i] = other.gcode_to_physical[i];

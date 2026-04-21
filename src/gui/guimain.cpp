@@ -23,6 +23,7 @@
 #include "screen_move_z.hpp"
 #include "ScreenShot.hpp"
 #include "screen_home.hpp"
+#include "screen_z_axis_boot.hpp"
 #include "gcode_info.hpp"
 #include "language_eeprom.hpp"
 #include "screen_messages.hpp"
@@ -193,7 +194,8 @@ void gui_run(void) {
     gui::knob::RegisterLongPressScreenAction([]() { Screens::Access()->Open(ScreenFactory::Screen<ScreenMoveZ>); });
 
     Screens::Init(ScreenFactory::Screen<screen_splash_data_t>);
-    Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<screen_home_data_t>);
+    // Boot to the Z-axis control screen instead of the standard home screen
+    Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<ScreenZAxisBoot>);
 
     // TIMEOUT variable getting value from EEPROM when EEPROM interface is initialized
     if (config_store().menu_timeout.get()) {

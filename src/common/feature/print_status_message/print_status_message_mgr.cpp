@@ -9,7 +9,7 @@ PrintStatusMessageManager &print_status_message() {
 }
 
 PrintStatusMessageManager::Record PrintStatusMessageManager::current_message() const {
-    std::scoped_lock mutex_guard(mutex_);
+    std::unique_lock mutex_guard(mutex_);
 
     if (temporary_message_.data) {
         return temporary_message_.data;
@@ -29,7 +29,7 @@ PrintStatusMessageManager::Record PrintStatusMessageManager::current_message() c
 }
 
 void PrintStatusMessageManager::show_temporary(const Message &msg, uint32_t duration_ms) {
-    std::scoped_lock guard(mutex_);
+    std::unique_lock guard(mutex_);
     temporary_message_ = TemporaryMessage {
         .data {
             .message = msg,
@@ -41,19 +41,19 @@ void PrintStatusMessageManager::show_temporary(const Message &msg, uint32_t dura
 }
 
 void PrintStatusMessageManager::clear_timed_out_temporary() {
-    std::scoped_lock guard(mutex_);
+    std::unique_lock guard(mutex_);
     if (temporary_message_.data && ticks_diff(ticks_ms(), temporary_message_.end_time_ms) >= 0) {
         temporary_message_.data = {};
     }
 }
 
 void PrintStatusMessageManager::clear_temporary() {
-    std::scoped_lock guard(mutex_);
+    std::unique_lock guard(mutex_);
     temporary_message_ = {};
 }
 
 void PrintStatusMessageManager::walk_history(const stdext::inplace_function<bool(const Record &)> &callback) const {
-    std::scoped_lock guard(mutex_);
+    std::unique_lock guard(mutex_);
     const auto end = history_pos_;
 
     auto pos = history_pos_;

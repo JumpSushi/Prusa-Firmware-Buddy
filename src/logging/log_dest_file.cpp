@@ -132,7 +132,7 @@ bool file_log_enable(const char *filepath) {
     }
 
     {
-        std::scoped_lock guard(mutex);
+        std::unique_lock guard(mutex);
         data = std::move(d);
         is_enabled = true;
     }
@@ -145,7 +145,7 @@ bool file_log_enable(const char *filepath) {
 void file_log_disable() {
     log_info(FileSystem, "Stopped logging to file");
 
-    std::scoped_lock guard(mutex);
+    std::unique_lock guard(mutex);
     is_enabled = false;
     data.reset();
 }

@@ -88,75 +88,11 @@ screen_splash_data_t::screen_splash_data_t()
     return;
 #endif
 
-    Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<PseudoScreenCallback, MsgBoxHappyPrinting>);
-
-#if HAS_SELFTEST() && !PRINTER_IS_PRUSA_iX()
-    const bool run_wizard =
-        []() {
-            SelftestResult sr = config_store().selftest_result.get();
-
-            auto any_passed = [](std::same_as<TestResult> auto... results) -> bool {
-                static_assert(sizeof...(results) > 0, "Pass at least one result");
-
-                return ((results == TestResult_Passed) || ...);
-            };
-
-            if (any_passed(sr.xaxis, sr.yaxis, sr.zaxis, sr.bed
-    #if PRINTER_IS_PRUSA_XL()
-                    ,
-                    config_store().selftest_result_phase_stepping.get()
-
-    #endif
-                        )) {
-                return false;
-            }
-            for (size_t e = 0; e < config_store_ns::max_tool_count; e++) {
-    #if HAS_TOOLCHANGER()
-                if (!prusa_toolchanger.is_tool_enabled(e)) {
-                    continue;
-                }
-    #endif
-                if (any_passed(sr.tools[e].printFan, sr.tools[e].heatBreakFan,
-    #if HAS_SWITCHED_FAN_TEST()
-                        sr.tools[e].fansSwitched,
-    #endif /* HAS_SWITCHED_FAN_TEST() */
-                        sr.tools[e].nozzle, sr.tools[e].fsensor, sr.tools[e].loadcell, sr.tools[e].dockoffset, sr.tools[e].tooloffset)) {
-                    return false;
-                }
-            }
-
-            return true;
-        }();
-#elif HAS_SELFTEST()
-    const bool run_wizard = false;
-#endif
-
-    constexpr auto pepa_callback = +[] {
-        const char *txt =
-#if PRINTER_IS_PRUSA_XL()
-            N_("Hi, this is your\nOriginal Prusa XL printer.\n"
-               "I would like to guide you\nthrough the setup process.");
-#elif PRINTER_IS_PRUSA_MK4()
-            // The MK4 is left out intentionally - it could be MK4, MK4S or MK3.9, we don't know yet
-            N_("Hi, this is your\nOriginal Prusa printer.\n"
-               "I would like to guide you\nthrough the setup process.");
-#elif PRINTER_IS_PRUSA_MK3_5()
-            N_("Hi, this is your\nOriginal Prusa MK3.5 printer.\n"
-               "I would like to guide you\nthrough the setup process.");
-#elif PRINTER_IS_PRUSA_MINI()
-            N_("Hi, this is your\nOriginal Prusa MINI printer.\n"
-               "I would like to guide you\nthrough the setup process.");
-#elif PRINTER_IS_PRUSA_iX()
-            N_("Hi, this is your\nOriginal Prusa iX printer.\n"
-               "I would like to guide you\nthrough the setup process.");
-#elif PRINTER_IS_PRUSA_COREONE()
-            N_("Hi, this is your\nPrusa CORE One printer.\n"
-               "I would like to guide you\nthrough the setup process.");
-#else
-    #error unknown config
-#endif
-        MsgBoxPepaCentered(_(txt), Responses_Ok);
-    };
+    // Custom Z-axis boot firmware: skip happy-printing, setup wizard, network
+    // wizard, and hw-config wizard entirely. Mark them done so they don't
+    // re-appear on subsequent boots.
+    config_store().printer_network_setup_done.set(true);
+    config_store().printer_hw_config_done.set(true);
 
 #if HAS_TOUCH()
     constexpr auto touch_error_callback = +[] {
@@ -164,31 +100,6 @@ screen_splash_data_t::screen_splash_data_t()
         MsgBoxWarning(_("Touch driver failed to initialize, touch functionality disabled"), Responses_Ok);
     };
 #endif
-
-    constexpr auto network_callback = +[] {
-        // Calls network_initial_setup_wizard
-        marlin_client::gcode("M1703 A");
-    };
-#if HAS_SELFTEST()
-    if (run_wizard) {
-        Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<ScreenMenuSTSWizard>);
-    }
-#endif
-    bool network_setup_needed = !config_store().printer_network_setup_done.get();
-    bool hw_config_needed = !config_store().printer_hw_config_done.get();
-    if (network_setup_needed) {
-        Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<PseudoScreenCallback, network_callback>);
-    }
-    if (hw_config_needed) {
-        Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<ScreenPrinterSetup>);
-    }
-    if (network_setup_needed || hw_config_needed
-#if HAS_SELFTEST()
-        || run_wizard
-#endif
-    ) {
-        Screens::Access()->PushBeforeCurrent(ScreenFactory::Screen<PseudoScreenCallback, pepa_callback>);
-    }
 
     // Check for FW type change
     {
